@@ -8,7 +8,7 @@ import matplotlib.patches as mpatches
 
 # df = pd.read_csv('transactions.csv')
 dataset_name = '0427data'
-df = pd.read_csv(f'C:/Users/USER/OneDrive/桌面/carbon/0113test/backend/Byether/data/{dataset_name}.csv')
+df = pd.read_csv(f'{dataset_name}.csv')
 
 # Create an directed graph
 G = nx.DiGraph()
@@ -58,12 +58,12 @@ legend_patches = [mpatches.Patch(color=cmap(degrees_dict[node]/max(colors)*1.5),
 plt.legend(handles=legend_patches, fontsize=5, loc='upper right')
 
 plt.title(dataset_name)
-plt.savefig(f'C:/Users/USER/OneDrive/桌面/carbon/0113test/backend/Byether/results/0427data.png', dpi=300, bbox_inches='tight')
+plt.savefig(f'0427data.png', dpi=300, bbox_inches='tight')
 plt.show()
 
 def ai_master(text_input):
     output_text = "token: " + text_input
-    output_image = Image.open("C:/Users/USER/OneDrive/桌面/carbon/0113test/backend/Byether/results/0427data.png")
+    output_image = Image.open("0427data.png")
     return output_text, output_image
 
 # interact_manual(ai_master, text_input='enter address');
